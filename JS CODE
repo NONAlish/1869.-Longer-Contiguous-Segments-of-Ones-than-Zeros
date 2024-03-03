@@ -8,12 +8,12 @@ var checkZeroOnes = function(s) {
     let maxCountOf0 = 0;
     let count0 = 0;
 
-    for(let i = 0; i<=s.length; i++) {
-        if (s[i] == 1) {
+    for(let i = 0; i <= s.length; i++) {
+        if (s[i] === '1') { // Сравниваем с символом '1'
             count1++;
             maxCountOf0 = Math.max(maxCountOf0, count0);
             count0 = 0;
-        } else {
+        } else if (s[i] === '0') {
             count0++;
             maxCountOf1 = Math.max(maxCountOf1, count1);
             count1 = 0;
