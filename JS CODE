@@ -1,0 +1,25 @@
+/**
+ * @param {string} 
+ * @return {boolean}
+ */
+var checkZeroOnes = function(s) {
+    let maxCountOf1 = 0;
+    let count1 = 0;
+    let maxCountOf0 = 0;
+    let count0 = 0;
+
+    for(let i = 0; i<=s.length; i++) {
+        if (s[i] == 1) {
+            count1++;
+            maxCountOf0 = Math.max(maxCountOf0, count0);
+            count0 = 0;
+        } else {
+            count0++;
+            maxCountOf1 = Math.max(maxCountOf1, count1);
+            count1 = 0;
+        }
+    }
+    maxCountOf0 = Math.max(maxCountOf0, count0);
+    maxCountOf1 = Math.max(maxCountOf1, count1);
+    return maxCountOf1 > maxCountOf0;
+};
